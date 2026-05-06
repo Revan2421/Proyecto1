@@ -1,59 +1,4 @@
-.main-content{
-    display: flex;
-    padding: 10px;
-    box-shadow: 5px 5px 10px black;
-}
-
-.content-img{
-    padding-right: 10px;
-    background-color: var(--main-color);
-}
-
-.content-info{
-    margin-left: 15px;
-}
-
-.img{
-    width: 500px;
-    height: 100%;
-    border-bottom-right-radius: 25%;
-}
-
-.Nombre {
-    color: var(--main-color);
-    font-family: var(--primary-font);
-    font-size: 50px;
-    font-style: bold;
-}
-
-.cover-letter{
-    font-family: var(--condensed-font);
-    font-style: italic;
-}
-
-.bullets{
-    font-family: var(--flex-font);
-}
-        
-td{
-    padding-top: 5px;
-}
-
-td:nth-child(5){
-    font-weight: bold;
-}
-
-.bullets td:first-child {
-    padding-right: 30px;
-    vertical-align: top;
-}
-
-.link-correo:visited{
-    color: var(--main-color);
-}
-.link-correo{
-    font-weight: bold;
-}
+@import url("./_theme.css");
 
 * {
     margin: 0;
@@ -66,7 +11,6 @@ body {
     background-color: #f5f5f5;
 }
 
-        
 header {
     background-color: var(--main-color);
     padding: 12px 24px;
@@ -97,7 +41,7 @@ header {
 
 .nav-search input[type="text"] {
     padding: 7px 14px;
-        order: none;
+    border: none;
     border-radius: 4px;
     font-size: 14px;
     width: 240px;
@@ -105,7 +49,7 @@ header {
 }
 
 .nav-search button {
-    padding: 7px 16p;
+    padding: 7px 16px;
     background-color: transparent;
     color: white;
     border: 1px solid white;
@@ -117,7 +61,7 @@ header {
 }
 
 .nav-search button:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .user-icon {
@@ -129,8 +73,18 @@ header {
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    color: var(--main-color, #1565C0);
+    color: var(--main-color);
 }
+
+footer {
+    padding: 16px;
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    font-family: var(--flex-font);
+    border-top: 2px solid #ccc;
+}
+
 
 section {
     padding: 28px 32px;
@@ -161,7 +115,7 @@ section h2 {
     border-radius: 8px;
     overflow: hidden;
     background-color: white;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.12);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.12);
     text-decoration: none;
     color: inherit;
     display: block;
@@ -170,7 +124,7 @@ section h2 {
 
 .student-card:hover {
     transform: scale(1.07) rotate(2deg);
-    box-shadow: 6px 6px 18px rgba(0,0,0,0.25);
+    box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .student-card img {
@@ -178,7 +132,7 @@ section h2 {
     height: 185px;
     object-fit: cover;
     display: block;
-    background-color: #37474F;
+    background-color: #37474f;
     transition: transform 0.3s ease;
 }
 
@@ -208,10 +162,63 @@ section h2 {
     background-color: var(--accent-color);
 }
 
-footer {
-    padding: 16px;
-    text-align: center;
-    color: #888;
-    font-size: 13px;
+
+.main-content {
+    display: flex;
+    padding: 10px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.content-img {
+    padding-right: 10px;
+    background-color: var(--main-color);
+}
+
+.content-info {
+    margin-left: 15px;
+}
+
+.img {
+    width: 500px;
+    height: 100%;
+    border-bottom-right-radius: 25%;
+}
+
+.Nombre {
+    color: var(--main-color);
+    font-family: var(--primary-font);
+    font-size: 50px;
+}
+
+.cover-letter {
+    font-family: var(--condensed-font);
+    font-style: italic;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.bullets {
     font-family: var(--flex-font);
+}
+
+td {
+    padding-top: 5px;
+}
+
+.bullets td:first-child {
+    padding-right: 30px;
+    vertical-align: top;
+}
+
+tr:last-child td {
+    font-weight: bold;
+}
+
+.link-correo {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.link-correo:active {
+    color: var(--accent-color);
 }
