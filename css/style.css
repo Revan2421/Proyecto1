@@ -239,19 +239,15 @@ tr:last-child td {
     color: white;
 }
 
-/* ══════════════════════════════
-   MEDIA QUERIES
-══════════════════════════════ */
+/* Media Queries*/
 
-/* ── Móviles: 320px - 480px ── */
+/* Dimension para movil */
 @media (max-width: 480px) {
 
-    /* Header: ocultar búsqueda e ícono, mostrar menú */
     .nav-search { display: none; }
     .user-icon  { display: none; }
     .menu-icon  { display: block;}
 
-    /* Profile: imagen arriba, info abajo */
     .main-content {
         flex-direction: column;
     }
@@ -274,14 +270,12 @@ tr:last-child td {
     .content-info {
         margin-left: 0;
     }
-
-    /* Index: 2 columnas */
     .student-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* ── Tablets: 481px - 768px ── */
+/* Dimension para tablets*/
 @media (min-width: 481px) and (max-width: 768px) {
 
     .nav-search { display: none; }
@@ -309,27 +303,24 @@ tr:last-child td {
     .content-info {
         margin-left: 0;
     }
-
-    /* Index: 2 columnas más anchas */
     .student-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* ── Laptops: 769px - 1024px ── */
+/* Dimension para laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
 
     .menu-icon { display: none; }
 
     .img-profile { max-width: 280px; }
 
-    /* Index: 3 columnas más chicas */
     .student-grid {
         grid-template-columns: repeat(3, 180px);
     }
 }
 
-/* ── Desktop: 1025px - 1200px ── */
+/* Dimension para desktop */
 @media (min-width: 1025px) and (max-width: 1200px) {
 
     .menu-icon { display: none; }
