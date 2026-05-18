@@ -11,6 +11,8 @@ body {
     background-color: #f5f5f5;
 }
 
+
+
 header {
     background-color: var(--main-color);
     padding: 12px 24px;
@@ -21,7 +23,7 @@ header {
 
 .logo {
     color: white;
-    font-size: 30px;
+    font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
     font-family: var(--primary-font);
@@ -29,7 +31,7 @@ header {
 }
 
 .logo span {
-    font-size: 17px;
+    font-size: 1.1rem;
     font-weight: normal;
 }
 
@@ -43,7 +45,7 @@ header {
     padding: 7px 14px;
     border: none;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 0.8rem;
     width: 240px;
     font-family: var(--flex-font);
 }
@@ -55,7 +57,7 @@ header {
     border: 1px solid white;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-family: var(--flex-font);
     transition: background-color 0.2s;
 }
@@ -72,7 +74,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 1.4rem;
     color: var(--main-color);
 }
 
@@ -80,7 +82,7 @@ footer {
     padding: 16px;
     text-align: center;
     color: #888;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-family: var(--flex-font);
     border-top: 2px solid #ccc;
 }
@@ -95,7 +97,7 @@ section {
 }
 
 section h2 {
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 24px;
     color: #111;
@@ -145,7 +147,7 @@ section h2 {
 }
 
 .card-info p {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #222;
     margin-bottom: 6px;
     font-family: var(--flex-font);
@@ -165,29 +167,38 @@ section h2 {
 
 .main-content {
     display: flex;
+    flex-direction: row;
     padding: 10px;
     box-shadow: 5px 5px 10px black;
+    gap: 20px;
 }
 
 .content-img {
+    flex-shrink: 0;         
     padding-right: 10px;
     background-color: var(--main-color);
 }
 
-.content-info {
-    margin-left: 15px;
+.img-profile {
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-right-radius: 25%;
 }
 
-.img {
-    width: 500px;
-    height: 100%;
-    border-bottom-right-radius: 25%;
+.content-info {
+    flex: 1;                 
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .Nombre {
     color: var(--main-color);
     font-family: var(--primary-font);
-    font-size: 50px;
+    font-size: 3rem;
 }
 
 .cover-letter {
@@ -221,4 +232,102 @@ tr:last-child td {
 
 .link-correo:active {
     color: var(--accent-color);
+}
+
+.menu-icon {
+    display: none;
+    color: white;
+}
+
+/* Media Queries*/
+
+/* Dimension para movil */
+@media (max-width: 480px) {
+
+    .nav-search { display: none; }
+    .user-icon  { display: none; }
+    .menu-icon  { display: block;}
+
+    .main-content {
+        flex-direction: column;
+    }
+    .content-img {
+        width: 100%;
+        padding-right: 0;
+    }
+    .img-profile {
+        width: 100%;
+        max-width: 100%;
+        border-bottom-right-radius: 0;
+    }
+    .img-profile {
+        content: url(../27663696/27663696Small.jpg);
+    }
+
+    .card-img {
+        content: url(../27663696/27663696Small.jpg);
+    }
+    .content-info {
+        margin-left: 0;
+    }
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Dimension para tablets*/
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .nav-search { display: none; }
+    .user-icon  { display: none; }
+    .menu-icon  { display: block; }
+
+    .main-content {
+        flex-direction: column;
+    }
+    .content-img {
+        width: 100%;
+        padding-right: 0;
+    }
+    .img-profile {
+        width: 100%;
+        max-width: 100%;
+        border-bottom-right-radius: 0;
+    }
+    .img-profile{
+        content: url(../27663696/27663696Small.jpg);
+    }
+    .card-img {
+        content: url(../27663696/27663696Small.jpg);
+    }
+    .content-info {
+        margin-left: 0;
+    }
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Dimension para laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .menu-icon { display: none; }
+
+    .img-profile { max-width: 280px; }
+
+    .student-grid {
+        grid-template-columns: repeat(3, 180px);
+    }
+}
+
+/* Dimension para desktop */
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+    .menu-icon { display: none; }
+
+    .img-profile { max-width: 350px; }
+
+    .student-grid {
+        grid-template-columns: repeat(3, 220px);
+    }
 }
