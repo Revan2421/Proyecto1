@@ -71,3 +71,19 @@ function cargarDatosPerfil() {
     enlaceCorreo.href = `mailto:${profile.email}`;
     enlaceCorreo.textContent = profile.email;
 }
+
+document.getElementById("btn-busqueda").addEventListener("click", function () {
+    ejecutarBusqueda();
+});
+document.getElementById("input-busqueda").addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
+        ejecutarBusqueda();
+    }
+});
+
+function ejecutarBusqueda() {
+    const valorBusqueda = document.getElementById("input-busqueda").value;
+    if (valorBusqueda.trim() !== "") {
+        window.location.href = `index.html?lang=${lang}&search=${encodeURIComponent(valorBusqueda)}`;
+    }
+}
