@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | Luis Garcia</title>
     <link rel="icon" sizes="192x192" href="icon/cropped-logonuevo-192x192.png">
     <link rel="stylesheet" href="css/style.css">
+    <script src="./js/profile.js" defer></script>
 </head>
+
 <body>
     <header>
-        <a class="logo" href="index.html">ATI<span>[UCV]</span>Log</a>
-
+        <a class="logo" href="index.html" id="titulo-ATI"></a>
         <nav class="nav-search">
-            <input type="text" placeholder="Nombre...">
-            <button type="button">Buscar</button>
+            <input type="text" id="input-busqueda">
+            <button type="button" class="buscar-boton" id="btn-busqueda"></button>
         </nav>
 
-        <div class="user-icon">&#128100;</div>
-        <div class="menu-icon">&#9776;</div>
+        <div class="menu-user" id="icono-perfil">
+            <span class="label-perfil" id="label-perfil"></span>
+            <div class="user-icon">&#128100;</div>
+        </div>
+        <div class="menu-icon" id="icono-menu">&#9776;</div>
     </header>
 
     <section class="main-content">
         <div class="content-img">
-            <img class="img-profile" src="/27663696/27663696Big.jpg" alt="lui">
+            <img class="img-profile" src="" alt="" id="foto-perfil">
         </div>
         <div class="content-info">
-            <h1 class="Nombre">Luis Garcia</h1>
-            <p class="cover-letter">
-                Soy estudiante de Computacion en la Universidad Central de Venezuela (UCV) cursando actualmente mi septimo semestre. Parte de mis objetivos en la carrera es salir con la mencion de Base de Datos, soy apasionado con la tecnologia y me encantan las innovaciones actuales con la IA.
-            </p>
+            <h1 class="Nombre" id="Nombre_persona"></h1>
+            <p class="cover-letter" id="descripcion_value"></p>
             <table class="bullets">
                 <tr>
-                    <td>Mi color favorito:</td>
-                    <td>Cian</td>
+                    <td id="Color_Fav"></td>
+                    <td id="Color_Value"></td>
                 </tr>
                 <tr>
-                    <td>Mi libro favorito:</td>
-                    <td>El Codigo Da Vinci</td>
+                    <td id="Libro_Fav"></td>
+                    <td id="Libro_Value"></td>
                 </tr>
                 <tr>
-                    <td>Mi estilo de Música favorito:</td>
-                    <td>Rock</td>
+                    <td id="Genero_Musica"></td>
+                    <td id="Musica_Value"></td>
                 </tr>
                 <tr>
-                    <td>Videojuegos favoritos:</td>
-                    <td>Splinter Cell, Battlefield 3, 4 y 1 y Halo</td>
+                    <td id="Game_Fav"></td>
+                    <td id="Game_value"></td>
                 </tr>
                 <tr style="font-weight: bold;">
-                    <td>Lenguajes de programación aprendidos:</td>
-                    <td>C++, Java, Python, JavaScript</td>
+                    <td id="Lenguaje_Fav"></td>
+                    <td id="Lenguaje_Value"></td>
                 </tr>
             </table>
-            
+
             <p class="bullets" style="margin-top: 15px;">
-                Si necesitan comunicarse conmigo me pueden escribir a: <br>
-                <a class="link-correo" href="mailto:luis.guti2401@gmail.com">luis.guti2401@gmail.com</a>
+                <span id="texto-correo"></span><br>
+                <a class="link-correo" href="" id="correo_value"></a>
             </p>
         </div>
     </section>
     <footer>
-        <p>Copyright &copy; 2026 Escuela de computaci&oacute;n &middot; ATI. Todos los derechos reservados</p>
+        <p id="copyright"></p>
     </footer>
 </body>
+
 </html>

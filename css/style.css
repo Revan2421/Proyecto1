@@ -174,7 +174,7 @@ section h2 {
 }
 
 .content-img {
-    flex-shrink: 0;         
+    flex-shrink: 0;
     padding-right: 10px;
     background-color: var(--main-color);
 }
@@ -188,7 +188,7 @@ section h2 {
 }
 
 .content-info {
-    flex: 1;                 
+    flex: 1;
     margin-left: 15px;
     display: flex;
     flex-direction: column;
@@ -244,32 +244,43 @@ tr:last-child td {
 /* Dimension para movil */
 @media (max-width: 480px) {
 
-    .nav-search { display: none; }
-    .user-icon  { display: none; }
-    .menu-icon  { display: block;}
+    .nav-search {
+        display: none;
+    }
+
+    .user-icon {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 
     .main-content {
         flex-direction: column;
     }
+
     .content-img {
         width: 100%;
         padding-right: 0;
     }
+
     .img-profile {
         width: 100%;
         max-width: 100%;
         border-bottom-right-radius: 0;
     }
+
     .img-profile {
-        content: url(../27663696/27663696Small.jpg);
+        width: 100%;
+        max-width: 100%;
+        border-bottom-right-radius: 0;
     }
 
-    .card-img {
-        content: url(../27663696/27663696Small.jpg);
-    }
     .content-info {
         margin-left: 0;
     }
+
     .student-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -278,31 +289,43 @@ tr:last-child td {
 /* Dimension para tablets*/
 @media (min-width: 481px) and (max-width: 768px) {
 
-    .nav-search { display: none; }
-    .user-icon  { display: none; }
-    .menu-icon  { display: block; }
+    .nav-search {
+        display: none;
+    }
+
+    .user-icon {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 
     .main-content {
         flex-direction: column;
     }
+
     .content-img {
         width: 100%;
         padding-right: 0;
     }
+
     .img-profile {
         width: 100%;
         max-width: 100%;
         border-bottom-right-radius: 0;
     }
-    .img-profile{
-        content: url(../27663696/27663696Small.jpg);
+
+    .img-profile {
+        width: 100%;
+        max-width: 100%;
+        border-bottom-right-radius: 0;
     }
-    .card-img {
-        content: url(../27663696/27663696Small.jpg);
-    }
+
     .content-info {
         margin-left: 0;
     }
+
     .student-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -311,9 +334,13 @@ tr:last-child td {
 /* Dimension para laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
 
-    .menu-icon { display: none; }
+    .menu-icon {
+        display: none;
+    }
 
-    .img-profile { max-width: 280px; }
+    .img-profile {
+        max-width: 280px;
+    }
 
     .student-grid {
         grid-template-columns: repeat(3, 180px);
@@ -323,11 +350,70 @@ tr:last-child td {
 /* Dimension para desktop */
 @media (min-width: 1025px) and (max-width: 1200px) {
 
-    .menu-icon { display: none; }
+    .menu-icon {
+        display: none;
+    }
 
-    .img-profile { max-width: 350px; }
+    .img-profile {
+        max-width: 350px;
+    }
 
     .student-grid {
         grid-template-columns: repeat(3, 220px);
     }
+}
+
+header {
+    flex-wrap: wrap;
+}
+
+/* El contenedor del ícono de usuario: oculto por defecto en móvil */
+.menu-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+}
+
+/* El label "Mi Perfil" está oculto en desktop */
+.label-perfil {
+    display: none;
+    font-size: 0.9rem;
+    font-family: var(--flex-font);
+    color: white;
+}
+
+/* === AL ABRIR EL MENÚ === */
+
+/* Barra de búsqueda: aparece en su propia fila completa con separadores */
+header.menu-abierto .nav-search {
+    display: flex !important;
+    width: 100%;
+    order: 3;
+    padding: 12px 0 10px;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+header.menu-abierto .nav-search input {
+    flex: 1;
+}
+
+/* Fila del ícono de usuario: aparece debajo de la barra de búsqueda, alineada a la derecha */
+header.menu-abierto .menu-user {
+    display: flex !important;
+    width: 100%;
+    order: 4;
+    justify-content: flex-end;
+    padding: 10px 0 4px;
+}
+
+/* El texto "Mi Perfil" aparece cuando el menú está abierto */
+header.menu-abierto .label-perfil {
+    display: inline !important;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
 }
