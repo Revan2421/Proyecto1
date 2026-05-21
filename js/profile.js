@@ -6,7 +6,7 @@ function initConfig() {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
-const lang = urlParams.get('lang');
+let lang = urlParams.get('lang') || 'ES';
 const ci = urlParams.get('ci');
 
 if (ci) {
