@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | Luis Garcia</title>
     <link rel="icon" sizes="192x192" href="icon/cropped-logonuevo-192x192.png">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="conf/configES.json" defer></script>
+    <script src="./js/profile.js" defer></script>
 </head>
+
 <body>
     <header>
-        <a class="logo" href="index.html">ATI<span>[UCV]</span>Log</a>
-
+        <a class="logo" href="index.html" id="titulo-ATI"></a>
         <nav class="nav-search">
-            <input type="text" placeholder="Nombre...">
-            <button type="button">Buscar</button>
+            <input type="text" id="input-busqueda">
+            <button type="button" class="buscar-boton" id="btn-busqueda"></button>
         </nav>
 
-        <div class="user-icon">&#128100;</div>
-        <div class="menu-icon">&#9776;</div>
+        <div class="user-icon" id="icono-perfil"></div>
+        <div class="menu-icon" id="icono-menu"></div>
     </header>
 
     <section class="main-content">
         <div class="content-img">
-            <img class="img-profile" src="/27663696/27663696Big.jpg" alt="lui">
+            <img class="img-profile" src="" alt="" id="foto-perfil">
         </div>
         <div class="content-info">
             <h1 class="Nombre" id="Nombre_persona"></h1>
-            <p class="cover-letter">
-        
-            </p>
+            <p class="cover-letter" id="descripcion_value"></p>
             <table class="bullets">
                 <tr>
                     <td id="Color_Fav"></td>
@@ -51,15 +52,16 @@
                     <td id="Lenguaje_Value"></td>
                 </tr>
             </table>
-            
+
             <p class="bullets" style="margin-top: 15px;">
-                Si necesitan comunicarse conmigo me pueden escribir a: <br>
-                <a class="link-correo" href="mailto:luis.guti2401@gmail.com" id="correo_value"></a>
+                <span id="texto-correo"></span><br>
+                <a class="link-correo" href="" id="correo_value"></a>
             </p>
         </div>
     </section>
     <footer>
-        <p>Copyright &copy; 2026 Escuela de computaci&oacute;n &middot; ATI. Todos los derechos reservados</p>
+        <p id="copyright"></p>
     </footer>
 </body>
+
 </html>
