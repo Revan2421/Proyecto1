@@ -1,4 +1,3 @@
-// 1. Reutilizamos la función para cargar cabecera y pie de página (igual a index.js)
 function initConfig() {
     document.getElementById("titulo-ATI").innerHTML = config.site[0] + "<span>" + config.site[1] + "</span>" + config.site[2];
     document.getElementById("input-busqueda").placeholder = config.name + "...";
@@ -7,6 +6,7 @@ function initConfig() {
 }
 
 const urlParams = new URLSearchParams(window.location.search);
+const lang = urlParams.get('lang');
 const ci = urlParams.get('ci');
 
 if (ci) {
@@ -14,8 +14,14 @@ if (ci) {
     scriptPerfil.src = `${ci}/profile.json`;
 
     scriptPerfil.onload = function () {
-        initConfig();
-        cargarDatosPerfil();
+        const scriptConfig = document.createElement("script");
+        scriptConfig.src = `conf/config${lang}.json`;
+
+        scriptConfig.onload = function () {
+            initConfig();
+            cargarDatosPerfil();
+        };
+        document.head.appendChild(scriptConfig);
     };
 
     document.head.appendChild(scriptPerfil);

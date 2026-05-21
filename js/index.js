@@ -16,7 +16,7 @@ function cargarPerfiles() {
 
         card.addEventListener("click", function (event) {
             event.preventDefault();
-            window.location.href = `profile.html?ci=${perfil.ci}`;
+            window.location.href = `profile.html?lang=${lang}&ci=${perfil.ci}`;
         });
         const img = document.createElement("img");
         img.className = "card-img";
@@ -36,5 +36,15 @@ function cargarPerfiles() {
     });
 }
 
-initConfig();
-cargarPerfiles();
+const urlParams = new URLSearchParams(window.location.search);
+let lang = urlParams.get('lang') || 'ES';
+
+const scriptConfig = document.createElement("script");
+scriptConfig.src = `conf/config${lang}.json`;
+
+scriptConfig.onload = function () {
+    initConfig();
+    cargarPerfiles();
+};
+document.head.appendChild(scriptConfig);
+
