@@ -2,6 +2,7 @@ function initConfig() {
     document.getElementById("titulo-ATI").innerHTML = config.site[0] + "<span>" + config.site[1] + "</span>" + config.site[2];
     document.getElementById("input-busqueda").placeholder = config.name + "...";
     document.getElementById("btn-busqueda").textContent = config.search;
+    document.getElementById("label-perfil").textContent = config.profile;
     document.getElementById("copyright").textContent = config.copyRight;
 }
 
@@ -86,4 +87,11 @@ function ejecutarBusqueda() {
     if (valorBusqueda.trim() !== "") {
         window.location.href = `index.html?lang=${lang}&search=${encodeURIComponent(valorBusqueda)}`;
     }
+}
+
+const btnMenu = document.getElementById("icono-menu");
+if (btnMenu) {
+    btnMenu.addEventListener("click", function () {
+        document.querySelector("header").classList.toggle("menu-abierto");
+    });
 }

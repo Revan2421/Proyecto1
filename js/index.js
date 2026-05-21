@@ -3,6 +3,7 @@ function initConfig() {
     document.getElementById("input-busqueda").placeholder = config.name + "...";
     document.getElementById("btn-busqueda").textContent = config.search;
     document.getElementById("icono-perfil").alt = config.profile;
+    document.getElementById("label-perfil").textContent = config.profile;
     document.getElementById("titulo-semestre").textContent = config.semester;
     document.getElementById("copyright").textContent = config.copyRight;
 }
@@ -91,4 +92,12 @@ scriptConfig.onload = function () {
     }
 };
 document.head.appendChild(scriptConfig);
+
+// === LÓGICA DEL MENÚ DESPLEGABLE EN MÓVILES (PASO 12) ===
+const btnMenu = document.getElementById("icono-menu");
+if (btnMenu) {
+    btnMenu.addEventListener("click", function() {
+        document.querySelector("header").classList.toggle("menu-abierto");
+    });
+}
 
