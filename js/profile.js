@@ -1,5 +1,7 @@
+console.log("[this #1 - Global scope]:", this);
+
 function initConfig() {
-    document.getElementById("titulo-ATI").innerHTML = config.site[0] + "<span>" + config.site[1] + "</span>" + config.site[2];
+    document.getElementById("titulo-ATI").innerHTML = config.site[0] + "<span class=\"logo-sub\">" + config.site[1] + "</span>" + config.site[2];
     document.getElementById("input-busqueda").placeholder = config.name + "...";
     document.getElementById("btn-busqueda").textContent = config.search;
     document.getElementById("label-perfil").textContent = config.profile;
@@ -74,6 +76,7 @@ function cargarDatosPerfil() {
 }
 
 document.getElementById("btn-busqueda").addEventListener("click", function () {
+    console.log("[this #3 - Event listener en btn-busqueda]:", this);
     ejecutarBusqueda();
 });
 document.getElementById("input-busqueda").addEventListener("keypress", function (e) {
@@ -83,6 +86,7 @@ document.getElementById("input-busqueda").addEventListener("keypress", function 
 });
 
 function ejecutarBusqueda() {
+    console.log("[this #2 - Función regular ejecutarBusqueda]:", this);
     const valorBusqueda = document.getElementById("input-busqueda").value;
     if (valorBusqueda.trim() !== "") {
         window.location.href = `index.html?lang=${lang}&search=${encodeURIComponent(valorBusqueda)}`;

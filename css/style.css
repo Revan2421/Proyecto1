@@ -30,7 +30,7 @@ header {
     letter-spacing: 1px;
 }
 
-.logo span {
+.logo-sub {
     font-size: 1.1rem;
     font-weight: normal;
 }
@@ -41,7 +41,7 @@ header {
     gap: 8px;
 }
 
-.nav-search input[type="text"] {
+#input-busqueda {
     padding: 7px 14px;
     border: none;
     border-radius: 4px;
@@ -50,7 +50,7 @@ header {
     font-family: var(--flex-font);
 }
 
-.nav-search button {
+.buscar-boton {
     padding: 7px 16px;
     background-color: transparent;
     color: white;
@@ -60,9 +60,10 @@ header {
     font-size: 0.8rem;
     font-family: var(--flex-font);
     transition: background-color 0.2s;
+    will-change: background-color;
 }
 
-.nav-search button:hover {
+.buscar-boton:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -96,7 +97,7 @@ section {
     background-color: white;
 }
 
-section h2 {
+.section-title {
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 24px;
@@ -121,7 +122,8 @@ section h2 {
     text-decoration: none;
     color: inherit;
     display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .student-card:hover {
@@ -129,16 +131,17 @@ section h2 {
     box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-.student-card img {
+.card-img {
     width: 100%;
     height: 185px;
     object-fit: cover;
     display: block;
     background-color: #37474f;
     transition: transform 0.3s ease;
+    will-change: transform;
 }
 
-.student-card:hover img {
+.student-card:hover .card-img {
     transform: scale(1.04);
 }
 
@@ -146,7 +149,7 @@ section h2 {
     padding: 8px 10px 4px;
 }
 
-.card-info p {
+.card-name {
     font-size: 0.9rem;
     color: #222;
     margin-bottom: 6px;
@@ -212,7 +215,7 @@ section h2 {
     font-family: var(--flex-font);
 }
 
-td {
+.bullets td {
     padding-top: 5px;
 }
 
@@ -221,7 +224,7 @@ td {
     vertical-align: top;
 }
 
-tr:last-child td {
+.bullets tr:last-child td {
     font-weight: bold;
 }
 
@@ -391,8 +394,8 @@ header.menu-abierto .nav-search {
     width: 100%;
     order: 3;
     padding: 12px 0 10px;
-    border-top: 1px solid rgba(255,255,255,0.4);
-    border-bottom: 1px solid rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 header.menu-abierto .nav-search input {
